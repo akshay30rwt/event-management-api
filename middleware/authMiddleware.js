@@ -17,7 +17,7 @@ const protect = async (req, res, next) => {
         next();
     }
     catch(error) {
-        if(error.name === 'JsonWebTokenError' || error.name === 'TokenExipiredError') {
+        if(error.name === 'JsonWebTokenError' || error.name === 'TokenExpiredError') {
             return res.status(401).json({
                 message: 'Invalid or Expired token'
             });
